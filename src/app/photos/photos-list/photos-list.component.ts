@@ -11,6 +11,7 @@ import { Photos } from '../model/photos';
 export class PhotosListComponent implements OnInit {
 
   photos: Photos[] = [];
+  filter: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,

@@ -1,1 +1,10 @@
-<app-organizing-photo [photos]="photos"></app-organizing-photo>
+<div class="text-center mt-3 mb-3">
+    <form>
+        <input type="search" class="rounded" placeholder="search..." autofocus 
+        (keyup)="filter = $event.target.value ">
+    </form>
+</div>
+
+<app-organizing-photo 
+    [photos]="photos | filterByDescription : filter">
+</app-organizing-photo>

@@ -5,12 +5,14 @@ import { CommonModule } from "@angular/common";
 import { PhotoComponent } from "./photos/photo.component";
 import { PhotosListComponent } from './photos-list/photos-list.component';
 import { OrganizingPhotoComponent } from './photos-list/organizing-photo/organizing-photo.component';
+import { filterByDescription } from "./photos-list/organizing-photo/filter-by-description.pipe";
 
 @NgModule({
     declarations: [
         PhotoComponent,
         PhotosListComponent,
-        OrganizingPhotoComponent
+        OrganizingPhotoComponent,
+        filterByDescription
     ],
     imports: [ 
         HttpClientModule,
