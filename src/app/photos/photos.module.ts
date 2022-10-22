@@ -4,11 +4,13 @@ import { CommonModule } from "@angular/common";
 
 import { PhotoComponent } from "./photos/photo.component";
 import { PhotosListComponent } from './photos-list/photos-list.component';
+import { OrganizingPhotoComponent } from './photos-list/organizing-photo/organizing-photo.component';
 
 @NgModule({
     declarations: [
         PhotoComponent,
-        PhotosListComponent
+        PhotosListComponent,
+        OrganizingPhotoComponent
     ],
     imports: [ 
         HttpClientModule,
