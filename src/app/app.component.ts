@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PhotosService } from './photos/service/photos.service';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  photos = [
-    {
-      url: 'https://images.pexels.com/photos/13366951/pexels-photo-13366951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      description: 'horizonte'
-    },
-    {
-      url: 'https://images.pexels.com/photos/2700567/pexels-photo-2700567.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      description: 'lago'
-    },
-    {
-      url: 'https://images.pexels.com/photos/13366951/pexels-photo-13366951.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      description: 'horizonte'
-    }
-  ]
+  photos: Object[] = [];
+
+  constructor(photosService: PhotosService) {
+    photosService.listFromUser().subscribe(response => {
+      console.log(response[0].description)
+      this.photos = response;
+    })
+  }
+
 }
