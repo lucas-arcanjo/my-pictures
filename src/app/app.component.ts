@@ -7,13 +7,7 @@ import { PhotosService } from './photos/service/photos.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  photos: Object[] = [];
 
-  constructor(photosService: PhotosService) {
-    photosService.listFromUser().subscribe(response => {
-      console.log(response[0].description)
-      this.photos = response;
-    })
-  }
+  constructor() { }
 
 }
